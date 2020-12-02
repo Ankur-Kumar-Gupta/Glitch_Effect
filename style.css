@@ -1,1 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f0f;
+}
 
+.pic{
+  width: 950px;
+  height: 300px;
+  background: url(pic.jpg) no-repeat transparent;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.pic::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(pic.jpg) no-repeat;
+  background-size: cover;
+  filter: sepia(50%);
+  opacity: 0;
+  display: flex;
+  opacity: .5;
+  animation: glitch 1.0s infinite linear;
+}
+
+.pic:hover:before{
+  opacity: .4;
+  animation: glitch .8s infinite linear;
+}
+
+.text{
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  font-size: 60px;
+  font-family: 'Iceland', cursive;
+  margin-top: 35%;
+  color: rgba(9, 89, 123, 0.596);
+}
+
+@keyframes glitch {
+  0%{
+    top: 0;
+    background-position: 12px 0;
+  }
+
+  20%{
+    top: 80px;
+    background-position: -10px -80px;
+  }
+
+  40%{
+    top: 160px;
+    background-position: 6px -160px;
+  }
+
+  60%{
+    top: 240px;
+    background-position: -6px -240px;
+  }
+
+  80%{
+    top: 320px;
+    background-position: 10px -320px;
+  }
+
+  100%{
+    top: 400px;
+    background-position: -12px -400px;
+  }
+}
